@@ -1,0 +1,24 @@
+.search {
+  widht: 100vw;
+  height: 9vh;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  
+}
+.search > input {
+  width: 50%;
+  height: 20px;
+  margin-top: 10px;
+  margin-left: 6vw;
+}
+.search > button {
+  width: 50px;
+  height: 27px;
+  margin-top: 10px;
+  background-color: burlywood;
+  border: none;
+  color: rgb(116, 95, 69);
+  font-weight: 600;
+}
+
