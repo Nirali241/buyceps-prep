@@ -15,7 +15,7 @@ function App() {
       document.documentElement.scrollTop + window.innerHeight + 50 >=
       document.documentElement.offsetHeight
     ) {
-      if (obj.length == page) setpage(page);
+      if (obj.length === page) setpage(page);
       else setpage((prev) => prev + 1);
     }
   };
@@ -27,6 +27,7 @@ function App() {
   });
   async function getData() {
     if (inputVal === "") setSearch("");
+   
     const res = await axios.get(
       `http://www.omdbapi.com/?apikey=538d003d&s=${
         search ? search : "Batman"
@@ -56,15 +57,15 @@ function App() {
       />
       <button onClick={() => setSearch(inputVal)}>search</button>
       </div>
-      <div style={{ overflowX: "hidden" }}>
+      <div className="wrapper">
         
 
         {filteredArray?.map((elem) => (
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="content">
             <div className="image">
               <img src={elem?.Poster} alt="" />
             </div>
-            <div className="description" style={{ padding: "50px" }}>
+            <div className="description">
               <h4>{elem?.Title}</h4>
               <h4>{elem?.Type}</h4>
               <h4>{elem?.Year}</h4>
